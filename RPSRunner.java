@@ -1,28 +1,24 @@
-//(c) A+ Computer Science
-// www.apluscompsci.com
-//Name -  
-
 import java.util.Scanner;
-import static java.lang.System.*;
 
 public class RPSRunner
 {
-	public static void main(String args[])
-	{
-		Scanner keyboard = new Scanner(System.in);
-		char response;
-		
-		//add in a do while loop after you get the basics up and running
-		
-			String player = "";
-		
-			out.print("type in your prompt [R,P,S] :: ");
-			
-			//read in the player value
-		
-			RockPaperScissors game = new RockPaperScissors();		
-	}
+    public static void main(String args[])
+    {
+        Scanner keyboard = new Scanner(System.in);
+        char response;
+
+        do {
+            System.out.print("type in your prompt [R,P,S] : ");
+            String player = keyboard.nextLine().toUpperCase();
+
+            RockPaperScissors game = new RockPaperScissors(player);
+            System.out.println(game.toString());
+
+            System.out.print("Do you want to play again? (y/n): ");
+            response = keyboard.nextLine().toLowerCase().charAt(0);
+
+        } while (response == 'y');
+
+        keyboard.close();
+    }
 }
-
-
-
